@@ -1,0 +1,1 @@
+m5 exit;echo 'This is running on Timing CPU cores.';/home/gem5/spectre/poc;echo 'spectre v1 run over:';sleep 1;m5 exit;
