@@ -1346,6 +1346,7 @@ LSQUnit::trySendPacket(bool isLoad, PacketPtr data_pkt)
         if (!dcachePort->sendTimingReq(data_pkt)) {
         if(wasHitMUSL&&!data_pkt->req->isHit_USL()){
             ret = false;
+            data_pkt->setLFBfill();
          DPRINTF(Speclfb, "[speclfb]failed send caused by speclfb :pc %x\n",
        data_pkt->req->getPC());
             }else{
@@ -1788,7 +1789,7 @@ if(wasHitUSL&&!request->mainReq()->isHit_USL()){
      DPRINTF(Speclfb, "[speclfb]add inst to speclfbStallInst [sn:%lli] PC %x\n",
                      load_inst->seqNum, load_inst->pcState().instAddr());
      load_inst->setSpeclfbStalled();
-     load_inst->setHasStalled();
+    //  load_inst->setHasStalled();
                     
             //  iewStage->speclfbStallInst(load_inst);
             //   request->_numOutstandingPackets=0;

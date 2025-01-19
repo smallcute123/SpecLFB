@@ -277,7 +277,7 @@ NoncoherentCache::serviceMSHRTargets(MSHR *mshr, const PacketPtr pkt,
             // responseLatency is the latency of the return path
             // from lower level caches/memory to an upper level cache or
             // the core.
-            if(tgt_pkt->req->isLFB_RF()){
+            if(tgt_pkt->isLFB_RF()){
                 completion_time += clockEdge(LFBLatency) +
                 (transfer_offset ? pkt->payloadDelay : 0);
             }else{

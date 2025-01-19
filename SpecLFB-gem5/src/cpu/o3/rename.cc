@@ -365,7 +365,7 @@ Rename::squash(const InstSeqNum &squash_seq_num, ThreadID tid)
     // Set the status to Squashing.
     renameStatus[tid] = Squashing;
 
-    // Squash any instructions from decode.
+    // Squash any instructions from decode. 
     for (int i=0; i<fromDecode->size; i++) {
         if (fromDecode->insts[i]->threadNumber == tid &&
             fromDecode->insts[i]->seqNum > squash_seq_num) {

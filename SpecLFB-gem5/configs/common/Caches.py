@@ -54,7 +54,7 @@ class L1Cache(Cache):
     tag_latency = 2
     data_latency = 2
     response_latency = 2
-    lfb_latency = 2
+    lfb_latency = 1
     mshrs = 4
     tgts_per_mshr = 20
 

@@ -1,0 +1,36 @@
+Command line:
+./run_spec17suit1000.sh cam4_r m5out
+================= Hardcoded directories ==================
+GEM5_DIR:                                     /home/chengxiaoyu/SpecLFB/SpecLFB-gem5
+SPEC_DIR:                                     /home/chengxiaoyu/spec2017new
+==================== Script inputs =======================
+BENCHMARK:                                    cam4_r
+OUTPUT_DIR:                                   m5out
+==========================================================
+Changing to SPEC benchmark runtime directory: /home/chengxiaoyu/spec2017new/benchspec/CPU/527.cam4_r/run/run_base_refrate_x86-m64.0000
+
+
+--------- Starting gem5! ------------
+
+
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 22.1.0.0
+gem5 compiled Nov  2 2024 00:03:08
+gem5 started Nov 12 2024 16:17:01
+gem5 executing on unislab-PowerEdge-T640, pid 3950189
+command line: /home/chengxiaoyu/SpecLFB/SpecLFB-gem5/build/X86/gem5.opt --outdir=m5out /home/chengxiaoyu/SpecLFB/SpecLFB-gem5/configs/spec2017/se_spec2017.py --num-cpus=1 --bp-type=BiModeBP --caches --l2cache --num-l2cache=1 --l1i_size=32kB --l1i_assoc=8 --l1d_size=32kB --l1d_assoc=8 --l2_size=256kB --l2_assoc=16 --mem-size=8192MB --cpu-type=DerivO3CPU --scheme=unsafebaseline --fast-forward=1000000 --maxinsts=10000000 --benchmark=cam4_r --benchmark_stdout=cam4_r.out --benchmark_stderr=cam4_r.err
+
+Selected SPEC_CPU2017 benchmark
+--> cam4_r
+Process stdout file: cam4_r.out
+Process stderr file: cam4_r.err
+['cam4_r_base.x86-m64']
+Switch at instruction count:1000000
+Switched CPUS @ tick 1152424500
+switching cpus
+**** REAL SIMULATION ****
+Exiting @ tick 1352225500 because exiting with last active thread context
+Simulated exit code not 0! Exit code is 127

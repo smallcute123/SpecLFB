@@ -537,7 +537,7 @@ def addCommonOptions(parser):
             "--scheme", 
             default=None, 
             action="store", 
-            choices=["unsafebaseline", "Speclfb"],
+            choices=["unsafebaseline", "Speclfb","SCSGuardian"],
             help="choose baseline or defense design"
             )
 

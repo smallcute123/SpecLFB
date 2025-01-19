@@ -802,7 +802,7 @@ Cache::serviceMSHRTargets(MSHR *mshr, const PacketPtr pkt, CacheBlk *blk)
                 // responseLatency is the latency of the return path
                 // from lower level caches/memory to an upper level cache or
                 // the core.
-            if(tgt_pkt->req->isLFB_RF()){
+            if(tgt_pkt->isLFB_RF()){
                 completion_time += clockEdge(LFBLatency) +
                 (transfer_offset ? pkt->payloadDelay : 0);
                 DPRINTF(Speclfb, "The  refill load is"
@@ -841,7 +841,7 @@ Cache::serviceMSHRTargets(MSHR *mshr, const PacketPtr pkt, CacheBlk *blk)
                 // responseLatency is the latency of the return path
                 // from lower level caches/memory to an upper level cache or
                 // the core.
-            if(tgt_pkt->req->isLFB_RF()){
+            if(tgt_pkt->isLFB_RF()){
                 completion_time += clockEdge(LFBLatency) +
                  pkt->payloadDelay;
                 DPRINTF(Speclfb, "The  refill load is"
@@ -857,7 +857,7 @@ Cache::serviceMSHRTargets(MSHR *mshr, const PacketPtr pkt, CacheBlk *blk)
                 // Fake response on LockedRMW completion, see above.
                 // Since the data is already in the cache, we just use
                 // responseLatency with no extra penalties.
-             if(tgt_pkt->req->isLFB_RF()){
+             if(tgt_pkt->isLFB_RF()){
             completion_time = clockEdge(LFBLatency);
             DPRINTF(Speclfb, "The  refill load is"
                          "PC %s  %d \n ",
@@ -880,7 +880,7 @@ Cache::serviceMSHRTargets(MSHR *mshr, const PacketPtr pkt, CacheBlk *blk)
                 // not a cache fill, just forwarding response
                 // responseLatency is the latency of the return path
                 // from lower level cahces/memory to the core.
-                  if(tgt_pkt->req->isLFB_RF()){
+                  if(tgt_pkt->isLFB_RF()){
                 completion_time += clockEdge(LFBLatency) + pkt->payloadDelay;
             DPRINTF(Speclfb, "The  refill load is"
                          "PC %s  %d \n ",

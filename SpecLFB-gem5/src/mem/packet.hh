@@ -339,6 +339,7 @@ class Packet : public Printable
         // Response co-ordination flag for cache maintenance
         // operations
         SATISFIED              = 0x00000020,
+        PACLFB_RF              = 0x00000030,
 
         // hardware transactional memory
 
@@ -764,6 +765,12 @@ class Packet : public Printable
         flags.set(SATISFIED);
     }
     bool satisfied() const { return flags.isSet(SATISFIED); }
+
+        void setLFBfill()
+    {
+        flags.set(PACLFB_RF);
+    }
+    bool isLFB_RF() const { return flags.isSet(PACLFB_RF); }
 
     void setSuppressFuncError()     { flags.set(SUPPRESS_FUNC_ERROR); }
     bool suppressFuncError() const  { return flags.isSet(SUPPRESS_FUNC_ERROR); }

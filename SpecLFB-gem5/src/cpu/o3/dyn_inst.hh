@@ -385,6 +385,7 @@ class DynInst : public ExecContext, public RefCounted
 
     /////////////////////// Checker //////////////////////
     // Need a copy of main request pointer to verify on writes.
+
     RequestPtr reqToVerify;
 
   public:

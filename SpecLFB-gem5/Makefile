@@ -45,7 +45,7 @@ s4x86:
 	$(GEM5_SIMULATOR_X86) $(BOOMFLAGS) --cmd=./mycode/attack_src/spectre-attack-intel/bin/spectre-v4.x86
 #debug exemple，see the debug output in m5out/trace.out
 debugv1:
-	$(GEM5_SIMULATOR) $(DEBUGFLAGS) $(BOOMFLAGS) --cmd=./mycode/attack_src/spectre-attack-riscv/bin/spectre-v1.riscv 
+	$(GEM5_SIMULATOR_X86) $(DEBUGFLAGS) $(BOOMFLAGS) --cmd=./mycode/attack_src/spectre-attack-intel/bin/spectre-v1.x86 
 
 
 # build pipeview file
