@@ -56,7 +56,10 @@ class RobIo(
 
   val xcpt_fetch_pc = Input(UInt(vaddrBitsExtended.W))
   //val rob_unsafe_masked = Output(Vec(numRobRows << log2Ceil(coreWidth),Bool()))
+  // [speclfb]
   val unsafe_masked =Output(Vec(numRobRows,Bool()))
+  // val reset = Input(Bool())
+
   val rob_tail_idx = Output(UInt(robAddrSz.W))
 //  val rob_pnr_idx  = Output(UInt(robAddrSz.W))
   val rob_head_idx = Output(UInt(robAddrSz.W))
@@ -336,7 +339,7 @@ val unsafe_masked = WireInit(VecInit(Seq.fill(numRobRows){false.B}))
                                    io.enq_uops(w).is_fencei)
       rob_unsafe(rob_tail)    := io.enq_uops(w).unsafe
       //[sepclfb]add
-      rob_unsafe_branch(rob_tail)    := io.enq_uops(w).unsafe
+      // rob_unsafe_branch(rob_tail)    := io.enq_uops(w).unsafe
       //rob_unsafe_lsu(rob_tail)    := io.enq_uops(w).unsafe
 
       rob_uop(rob_tail)       := io.enq_uops(w)
@@ -522,7 +525,7 @@ val unsafe_masked = WireInit(VecInit(Seq.fill(numRobRows){false.B}))
     for (i <- 0 until numRobRows) {
      // rob_unsafe_masked((i << log2Ceil(coreWidth)) + w) := rob_val(i) && (rob_unsafe(i) || rob_exception(i))
      //[speclfb]update rob unsafe mask
-      unsafe_masked(i) := rob_val(i) && (rob_unsafe(i) || rob_exception(i)||rob_unsafe_branch(i)||io.lsu_unsafe_mem)
+      unsafe_masked(i) := rob_val(i) && (rob_unsafe_branch(i)||io.lsu_unsafe_mem)//rob_unsafe(i) || rob_exception(i)
       // if(SPECULATIVE_TRACE){
       //   when(rob_uop(i).is_br||rob_uop(i).is_jal||rob_uop(i).is_jalr){
       //     printf(" %x 2\n",rob_uop(i).debug_pc)

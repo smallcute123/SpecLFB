@@ -1326,6 +1326,11 @@ class BoomCore(usingTrace: Boolean)(implicit p: Parameters) extends BoomModule
   }
   //13
      assert (!(idle_cycles.value(13)), "Pipeline has hung.")
+
+    when( idle_cycles.value(3) && idle_cycles.value(1)){
+    rob.io.lsu_unsafe_mem :=false.B
+    }
+ 
      
   if (usingFPU) {
     fp_pipeline.io.debug_tsc_reg := debug_tsc_reg

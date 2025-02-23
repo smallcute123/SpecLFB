@@ -84,3 +84,20 @@ class MediumBoomSpeclfbConfig extends Config(
   ```
   `$ATTACK_HOME` refers to the path where the executable file for the attack is located.
 
+## Software:
+- **Operating System**: Ubuntu 20.04
+- **Chipyard Version**: v1.8.0
+  - Used for generating RTL for SonicBOOM-based processors.
+- **Verilator Version**: v4.210
+  - Used for running the simulations of the generated RTL.
+- **Vivado Version**: 2021.2
+  - Used for hardware design synthesis and analysis.
+
+## Hardware:
+- **FPGA Board**: Xilinx EK-KC-705
+  - The system is hosted on this FPGA board.
+
+## System Configuration:
+- **Board OS**: Debian-based Linux kernel
+  - The board runs a Debian-based Linux kernel for system operation.
+
