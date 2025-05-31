@@ -17,7 +17,7 @@ If you use or reference our work in your research or incorporate our code into y
  
  ```bash
 @inproceedings{cheng2024speclfb,
-  title={SpecLFB: Eliminating CacheSide Channels in SpeculativeExecutions},
+  title={SpecLFB: Eliminating CacheSide Channels in Speculative Executions},
   author={Cheng, Xiaoyu and Tong, Fei and Wang, Hongyu and Zhou, Zhe and Jiang, Fang and Mao, Yuxing},
   booktitle={Proceedings of the 33rd USENIX Security Symposium (USENIX Security 24)},
   pages={631--646},
