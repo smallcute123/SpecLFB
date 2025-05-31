@@ -7,4 +7,10 @@ SpecLFB is a defense scheme against speculative cache side-channel attacks, impl
 
 Please refer to the `readme.md` in the `SpecLFB-boom` or `SpecLFB-gem5` folder for specific operation steps.
 
+In addition:
+
+- The `attack_example_riscv` folder contains example attacks for testing on Chipyard.
+
+- The `Spectre-Attacks-in-SonicBOOM` folder contains example attacks specifically designed to run on FPGA hardware using the SonicBOOM core.
+
 

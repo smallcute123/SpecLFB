@@ -754,7 +754,7 @@ class LSU(implicit p: Parameters, edge: TLEdgeOut) extends BoomModule()(p)
   io.dmem.rob_head_idx   := io.core.rob_head_idx
   //io.dmem.rob_pnr_idx    := io.core.rob_pnr_idx
   //io.dmem.rob_unsafe_masked := io.core.rob_unsafe_masked
-io.dmem.unsafe_masked := io.core.unsafe_masked
+  io.dmem.unsafe_masked := io.core.unsafe_masked
   val dmem_req = Wire(Vec(memWidth, Valid(new BoomDCacheReq)))
   io.dmem.req.valid := dmem_req.map(_.valid).reduce(_||_)
   io.dmem.req.bits  := dmem_req
