@@ -13,4 +13,17 @@ In addition:
 
 - The `Spectre-Attacks-in-SonicBOOM` folder contains example attacks specifically designed to run on FPGA hardware using the SonicBOOM core.
 
+If you use or reference our work in your research or incorporate our code into your project, please cite our paper:
+ 
+ ```bash
+@inproceedings{cheng2024speclfb,
+  title={SpecLFB: Eliminating CacheSide Channels in SpeculativeExecutions},
+  author={Cheng, Xiaoyu and Tong, Fei and Wang, Hongyu and Zhou, Zhe and Jiang, Fang and Mao, Yuxing},
+  booktitle={Proceedings of the 33rd USENIX Security Symposium (USENIX Security 24)},
+  pages={631--646},
+  year={2024}
+}
+```
+
+Thank you for your support!
 
